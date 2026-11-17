@@ -632,3 +632,172 @@ document.addEventListener('DOMContentLoaded', render);
       }
    }
 }
+
+/* ==========================================
+   RESPONSIVE DESIGN - PIZZA CRONOS
+   ========================================== */
+
+/* Tablets y celulares */
+@media screen and (max-width: 760px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+    }
+
+    header .logo {
+        width: 4.5rem;
+        margin: 0.5rem 0;
+    }
+
+    header .menu {
+        width: 100%;
+    }
+
+    header .menu .menu-principal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    header .menu .menu-principal li {
+        flex: 1 1 calc(50% - 0.5rem);
+        list-style: none;
+        text-align: center;
+        min-width: 0;
+    }
+
+    header .menu .menu-principal li a {
+        display: block;
+        width: 100%;
+        padding: 0.65rem 0.4rem;
+        font-size: 0.9rem;
+        border-radius: 0.6rem;
+        box-sizing: border-box;
+    }
+
+    /* Carrito */
+    header .menu .menu-principal .shopping-cart {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    header .menu .menu-principal .shopping-cart a {
+        width: auto;
+        padding: 0.5rem 0.8rem;
+        font-size: 1.3rem;
+    }
+
+    /* Portada */
+    .container-main {
+        min-height: 260px;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .container-main .description {
+        width: 100%;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .container-main .description h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .container-main .description h2 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Catálogo */
+    .product-container {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .product-card {
+        width: min(300px, 100%);
+    }
+
+    .product-card .product-img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Reseñas */
+    .review-grid {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 260px), 1fr)
+        );
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* Formulario */
+    .container-contact {
+        padding: 1rem 0.75rem 2rem;
+    }
+
+    .container-contact form {
+        width: 100%;
+    }
+
+    .container-contact form fieldset {
+        padding: 1.2rem;
+    }
+
+    /* Carrito */
+    .cart-page main {
+        padding: 1rem 0.5rem 2rem;
+    }
+
+    .item-products {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .item-products table {
+        min-width: 600px;
+    }
+}
+
+/* Celulares pequeños */
+@media screen and (max-width: 380px) {
+
+    header {
+        padding: 0.5rem;
+    }
+
+    header .menu .menu-principal {
+        gap: 0.4rem;
+    }
+
+    header .menu .menu-principal li a {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.2rem;
+    }
+
+    .container-main .description {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .container-main .description h2 {
+        font-size: 0.9rem;
+    }
+
+    .container-contact form fieldset {
+        padding: 1rem;
+    }
+}                   
