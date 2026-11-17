@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('[https://fonts.googleapis.com/css2?family=Noto+Sans+Cuneiform&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+Cuneiform&display=swap)');
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+/* Variables */
+:root {
+   --color-primary: #141516;
+   --color-secondary: rgb(186, 144, 45);
+   --color-text: black;
+
+   --font-main: Verdana, Geneva, Tahoma, sans-serif;
+   --font-family: "Cinzel", serif;
+   --font-family: "Marcellus", serif;
+   --family-font: "Marcellus", sans-serif;
+   /* --font-size-h1:  */
+}
+
+html {
+   font-size: 15px;
+   font-family: var(--family-font);
+}
+
+header {
+   background-color: var(--color-primary);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 2rem;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+
+   .logo {
+      width: 5rem;
+      height: auto;
+      /* display: inline-block; */
+      margin: 1rem 0;
+   }
+
+   .menu {
+      /* border: 1px solid; */
+      /* display: inline-block; */
+      /* vertical-align: 2.5rem; */
+
+      .menu-principal {
+         list-style: none;
+         display: flex;
+         gap: 2rem;
+
+         li {
+            a {
+               /* display: inline-block; */
+               border: 1px solid var(--color-primary);
+               padding: 0.5rem 2rem;
+               border-radius: .75rem;
+               color: var(--color-primary);
+               background-color: var(--color-secondary);
+               cursor: pointer;
+               text-decoration: none;
+               transition: transform 0.8s ease;
+               font-weight: bold;   /* o 700 */
+            }
+
+            &:hover {
+               color: var(--color-secondary);
+               background-color: var(--color-primary);
+               border-color: var(--color-secondary);
+               transform: scale(1.1);
+            }
+         }
+         
+         .shopping-cart a {
+            padding: 0.5rem;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            border: 1px solid var(--color-secondary);
+            position: relative;
+
+            .count {
+               color: var(--color-secondary);
+               position: absolute;     
+               background-color: var(--color-secondary);
+               border-radius: 50%;
+               padding: 0 5px;
+               color: var(--color-primary);
+            }
+         }
+      }
+   }
+
+   h1 {
+      text-align: center;
+   }
+}
+
+
+.container-main {
+   height: 300px;
+   /* border: 1px solid;
+   background-color: var(--color-primary); */
+   background-image: url("../assets/img/fondo.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   .description {
+      /* border: 1px solid black; */
+      width: 50vw;
+      padding: 3rem;
+
+      h1 {
+         font-size: clamp(1rem, -1.455rem + 7.27vw, 3rem);
+         color: rgb(255, 207, 51);                        /* h1 blanco */
+         text-shadow: 2px 2px 4px black;      /* sombra del h1 */
+      }
+
+            h2 {
+         text-shadow: 2px 2px 4px black;  color: white;     /* sombra del h2 */
+      }
+
+
+      p {
+         margin-top: 1rem;
+         margin-top: 2rem;
+         font-weight: 400;
+         letter-spacing: 0.25rem;
+         text-shadow: 2px 2px 4px white;
+      }
+   }
+}
+
+.aside {
+   width: 150px;
+   border: 1px solid;
+
+   .menu-categorias {
+      list-style: none;
+
+      li {
+         padding: 5px 10PX;
+         border: 1px solid;
+         border-radius: 15px;
+         text-align: center; 
+      }
+   }
+}
+
+h2,
+h3 {
+   color: var(--color-secondary);
+   padding: 1.5rem 0 0;
+}
+
+.container-product {
+   /* margin: 2rem auto; */
+   width: 100%;
+   text-align: center;
+   background-color: var(--color-primary);
+
+   .product-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-top: 1.5rem;
+
+      .description {
+         padding: 1rem;
+      }
+
+      .product-card {
+         border: 1px solid;
+         border-radius: 10px;
+         width: 300px;
+         /* height: 500px; */
+         overflow: hidden;
+         background-color: beige;
+         transition: 0.3s ease transform, 0.3s ease box-shadow;
+
+         .product-img {
+            object-fit: cover;
+         }
+
+         .product-content {
+            text-align: left;
+            padding: 0.5rem 1rem 1rem;
+
+            .product-category {
+               background-color: orange;
+               font-weight: bold;
+               letter-spacing: 2px;
+               padding: .25rem .5rem;
+               border-radius: 0.5rem;
+            }
+
+            .product-title {
+               font-size: 1.25rem;
+               font-weight: bold;
+               margin-top: 0.5rem;
+            }
+
+            .product-description {
+               display: -webkit-box;
+               -webkit-box-orient: vertical;
+               -webkit-line-clamp: 3;
+               line-clamp: 3;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               line-height: 1.7;
+            }
+
+            .product-button {
+               text-align: center;
+               padding: 0.5rem 1rem;
+               border-radius: 1rem;
+               color: white;
+               background-color: orange;
+               border-color: white;
+               margin-top: 0.75rem;
+               cursor: pointer;
+   
+               :hover {
+                  background-color: var(--color-secondary);
+               }
+            }
+         }
+         
+         &:hover {
+            transform: scale(1.03);
+            box-shadow: 4px 4px 4px var(--color-secondary);
+         }
+      }
+   }
+}
+
+.container-review,
+.container-contact,
+footer {
+   width: 100%;
+   text-align: center;
+   background-color: var(--color-primary);
+
+   .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* repeat(3,1fr);*/ 
+      gap: 2rem;
+      padding: 2rem 1rem;
+
+      .review-card {
+         border: 1px solid var(--color-secondary);
+         border-radius: 10px;
+         padding: 2rem 2rem 3rem;
+         position: relative;
+         background-color: beige;
+         transition: 0.3s ease all; /* transform,0.3s ease box-shadow; */
+
+         p {
+            font-style: italic;
+            letter-spacing: 3px;       
+         }
+
+         span {
+            position: absolute;
+            bottom: 1rem;
+            left: 2.5rem;
+         }
+      }
+
+      .review-card:hover {
+         transform: translateY(-10px);
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+   }
+}
+
+
+.container-contact {
+   padding: 1rem 1rem 3rem;
+
+   form {
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+
+      fieldset {
+         display: grid;
+         gap: 1.25rem;
+         padding: 2rem;
+         border: 1px solid var(--color-secondary);
+         border-radius: 10px;
+         background-color: beige;
+         text-align: left;
+
+         legend {
+            padding: 0 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+            background-color: var(--color-primary);
+            border-radius: 0.5rem;
+         }
+
+         label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+            color: var(--color-primary);
+         }
+
+         input,
+         textarea {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            font: inherit;
+            border: 1px solid #b9b9b9;
+            border-radius: 0.5rem;
+            background-color: white;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+         }
+
+         textarea {
+            resize: vertical;
+            min-height: 120px;
+         }
+
+         input:focus-visible,
+         textarea:focus-visible {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(186, 144, 45, 0.35);
+         }
+
+         /* Estados de validación */
+         .error-message {
+            display: block;
+            min-height: 1.1rem;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+            color: #b3261e;
+         }
+
+         .form-group.invalid input,
+         .form-group.invalid textarea {
+            border-color: #b3261e;
+            box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.2);
+         }
+
+         .form-group.valid input,
+         .form-group.valid textarea {
+            border-color: #2e7d32;
+         }
+
+         button[type="submit"] {
+            justify-self: center;
+            padding: 0.7rem 2.5rem;
+            font: inherit;
+            font-weight: bold;
+            color: var(--color-primary);
+            background-color: var(--color-secondary);
+            border: 1px solid var(--color-secondary);
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+               color: var(--color-secondary);
+               background-color: var(--color-primary);
+               transform: scale(1.05);
+            }
+         }
+
+         .form-status {
+            text-align: center;
+            font-weight: bold;
+            color: #2e7d32;
+            min-height: 1.2rem;
+         }
+      }
+   }
+}
+
+
+footer {
+   color: white;
+   padding: 1.5rem 1rem;
+}
+
+.cart-page {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+
+   main {
+      flex: 1;
+      padding: 1rem 1rem 3rem;
+   }
+
+   .cart-title {
+      text-align: center;
+      color: var(--color-primary);
+      padding: 1.5rem 0 1rem;
+   }
+}
+
+.item-products {
+   max-width: 900px;
+   margin: 0 auto;
+   overflow-x: auto; /* en celular la tabla scrollea y no rompe la página */
+
+   .cart-empty {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 1.25rem;
+
+      a {
+         color: var(--color-secondary);
+         font-weight: bold;
+      }
+   }
+
+   table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: beige;
+      border: 1px solid var(--color-secondary);
+      border-radius: 10px;
+      overflow: hidden;
+
+      th,
+      td {
+         padding: 0.9rem 1rem;
+         text-align: center;
+         border-bottom: 1px solid rgba(186, 144, 45, 0.4);
+      }
+
+      td:nth-child(1) {
+         text-align: left;
+         font-weight: bold;
+      }
+
+      thead th {
+         background-color: var(--color-primary);
+         color: var(--color-secondary);
+      }
+
+      tfoot th {
+         background-color: var(--color-primary);
+         color: var(--color-secondary);
+         font-size: 1.25rem;
+         text-align: right;
+      }
+   }
+
+   .qty-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+   }
+
+   .btn-qty,
+   .btn-remove,
+   .btn-clear {
+      font: inherit;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+         transform: scale(1.08);
+      }
+   }
+
+   .btn-qty {
+      width: 2rem;
+      height: 2rem;
+      font-weight: bold;
+      color: var(--color-primary);
+      background-color: var(--color-secondary);
+      border: 1px solid var(--color-secondary);
+   }
+
+   .btn-remove {
+      padding: 0.3rem 0.7rem;
+      color: #b3261e;
+      background-color: transparent;
+      border: 1px solid #b3261e;
+
+      &:hover {
+         color: white;
+         background-color: #b3261e;
+      }
+   }
+
+   .cart-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.25rem;
+   }
+
+   .btn-clear {
+      padding: 0.6rem 1.5rem;
+      font-weight: bold;
+      color: var(--color-secondary);
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-secondary);
+
+      &:hover {
+         color: var(--color-primary);
+         background-color: var(--color-secondary);
+      }
+   }
+}
+3. JS (reemplaza todo cart.js)
+
+Mantiene tus mismas claves de localStorage (shoppingCard y productCount), así que sigue siendo compatible con tu products.js. Agrega botones + / − / eliminar / vaciar.
+
+javascript
+const STORAGE_CART = 'shoppingCard';
+const STORAGE_COUNT = 'productCount';
+
+const container = document.getElementById('item-products');
+let articles = JSON.parse(localStorage.getItem(STORAGE_CART)) || [];
+
+// Guarda el carrito y recalcula el contador a partir de los artículos,
+// así los dos valores nunca quedan desincronizados.
+function save() {
+   const totalCount = articles.reduce((sum, a) => sum + a.count, 0);
+   localStorage.setItem(STORAGE_CART, JSON.stringify(articles));
+   localStorage.setItem(STORAGE_COUNT, JSON.stringify(totalCount));
+}
+
+function render() {
+   if (articles.length === 0) {
+      container.innerHTML = `
+         <p class="cart-empty">
+            El carrito está vacío (y nuestras pizzas, esperando). 🍕
+            <br><a href="../index.html#product">Ver productos</a>
+         </p>`;
+      return;
+   }
+
+   let total = 0;
+
+   const rows = articles.map((article, index) => {
+      const price = parseFloat(article.price);
+      const subtotal = price * article.count;
+      total += subtotal;
+
+      return `
+         <tr>
+            <td>${article.title}</td>
+            <td>
+               <div class="qty-control">
+                  <button type="button" class="btn-qty" data-action="dec" data-index="${index}"
+                     aria-label="Quitar una unidad de ${article.title}">−</button>
+                  <span>${article.count}</span>
+                  <button type="button" class="btn-qty" data-action="inc" data-index="${index}"
+                     aria-label="Agregar una unidad de ${article.title}">+</button>
+               </div>
+            </td>
+            <td>$${price.toFixed(2)}</td>
+            <td>$${subtotal.toFixed(2)}</td>
+            <td>
+               <button type="button" class="btn-remove" data-action="remove" data-index="${index}"
+                  aria-label="Eliminar ${article.title}">Eliminar</button>
+            </td>
+         </tr>`;
+   }).join('');
+
+   container.innerHTML = `
+      <table>
+         <thead>
+            <tr>
+               <th>Producto</th>
+               <th>Cantidad</th>
+               <th>Precio</th>
+               <th>Subtotal</th>
+               <th></th>
+            </tr>
+         </thead>
+         <tbody>${rows}</tbody>
+         <tfoot>
+            <tr>
+               <th colspan="5">Total: $ ${total.toFixed(2)}</th>
+            </tr>
+         </tfoot>
+      </table>
+      <div class="cart-actions">
+         <button type="button" class="btn-clear" data-action="clear">Vaciar carrito</button>
+      </div>`;
+}
+
+// Un solo listener para todos los botones (delegación de eventos)
+container.addEventListener('click', event => {
+   const btn = event.target.closest('button[data-action]');
+   if (!btn) return;
+
+   const index = Number(btn.dataset.index);
+
+   switch (btn.dataset.action) {
+      case 'inc':
+         articles[index].count += 1;
+         break;
+      case 'dec':
+         articles[index].count -= 1;
+         if (articles[index].count <= 0) articles.splice(index, 1);
+         break;
+      case 'remove':
+         articles.splice(index, 1);
+         break;
+      case 'clear':
+         articles = [];
+         break;
+   }
+
+   save();
+   render();
+});
+
+document.addEventListener('DOMContentLoaded', render);
+
+@media screen and (max-width: 760px) {
+   header {
+      flex-direction: column;
+
+      .menu .menu-principal {
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+   }
+}
